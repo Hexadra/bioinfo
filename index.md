@@ -23,13 +23,10 @@ See the repo for 23spring Bioinformatics course here:
 
  
 1. Homework for Bioinfomatics course:    
-	1.week1  
-	2. ...  
-	3. ...   
-	4. ...  
-	5. ...  
-3. dddd   
-	* ss
+	1.[Week1_homework](https://hexadra.github.io/bioinfo/Week1_homework.html)   
+	2....  
+2. Notes   
+	1.ss
 
 And this is a panda:  
 ![pandas](https://wallpapertag.com/wallpaper/full/c/e/5/230888-cute-tumblr-wallpapers-2560x1600-for-android-tablet.jpg "panda")
