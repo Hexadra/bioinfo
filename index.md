@@ -9,53 +9,54 @@ School of Life Sciences, Tsinghua University<br>
 </center><br>
 
 
-
-
+<!--
 ## **Week1 homework is in: [Week1_homework](https://hexadra.github.io/bioinfo/Week1_homework.html)**  
+-->
 
 ## Notes for Lesson one:  
-1. 基因
-2. 基因的定义是什么？
-    基因应当被抽象地定义为蕴含在DNA等序列中的信息，而非DNA本身。
+1. 人类基因为什么少   
+2. 基因的定义是什么？    
+    基因应当被抽象地定义为蕴含在DNA等序列中的信息，而非DNA本身。    
+       
+4. 生物数据爆发式增长的情况下，如何从中挖掘有用信息？如何获得可理解的结构化的知识？     
+5. f    
+6. 信息、模型与算法       
+	6.1    
+8. f   
+解释一下算法(algorithm)和模型(model)的区别   
+   
     
-4. f
-5. f
-6. f
-7. f
-
-
-
 ## Learning Plan for the Bioinformatics course:   
-1. 在尽可能短的时间内掌握linux基础操作命令
-2. 熟悉R的语法
-
-Sequence Alignment (Blast) - 45min 
-Conservation & Evolution - 20min
-Genomic Resource  (Appendix II. Databases & Servers) - 10min  
-
-
-
-
-4. Group study:  
-
+1. 掌握linux基础操作命令。    
+	1.1 在尽可能短的时间内完成    
+	1.2 重点学习文件批量操作方法     
+2. 熟悉R的语法。   
+3. 运用1.和2. 的知识，学习对DNA、RNA的测序数据进行分析，包括：    
+	3.1 序列比对、保守性分析、基因定位    
+	3.2 RNA测序、功能分析
+	3.3 ChIP-seq和CLIP-seq，分析互作关系   
+4. 了解机器学习的几个经典模型的**原理**和**适用场景**。   
+5. 注重同辈交流(Group study)    
 
 
 
-See the repo for 23spring Bioinformatics course here:
+### 23spring Bioinformatics course    
+See my repo for 23spring Bioinformatics course here:
 [bioinfomatics](https://github.com/Hexadra/bioinfo)
 
 
 
- 
-1. Homework for Bioinfomatics course:    
-	1.[Week1_homework](https://hexadra.github.io/bioinfo/Week1_homework.html)   
+## Content   
+1. Homework for 23-spring Bioinfomatics course:    
+	1....<!--[Week1_homework](https://hexadra.github.io/bioinfo/Week1_homework.html)-->   
 	2....  
 2. Notes   
-	1.ss
+	1....
 
+<!--
 And this is a panda:  
 ![pandas](htps://wallpapertag.com/wallpaper/full/c/e/5/230888-cute-tumblr-wallpapers-2560x1600-for-android-tablet.jpg "panda")
-
+-->
 
 
 ### References:
