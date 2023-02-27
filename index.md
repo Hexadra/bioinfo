@@ -14,17 +14,16 @@ School of Life Sciences, Tsinghua University<br>
 -->
 
 ## Notes for Lesson one:  
-1. 人类基因为什么少   
-2. 基因的定义是什么？    
+1. 基因组大小与生物的“高级”程度关联不大，人类基因数相对并不多：
+	基因组里蕴含了许多额外信息，除开编码蛋白的序列外，Non-coding sequence也有重要功能。      
+3. 基因的定义是什么？    
     基因应当被抽象地定义为蕴含在DNA等序列中的信息，而非DNA本身。    
        
-4. 生物数据爆发式增长的情况下，如何从中挖掘有用信息？如何获得可理解的结构化的知识？     
-5. f    
-6. 信息、模型与算法       
-	6.1    
-8. f   
-解释一下算法(algorithm)和模型(model)的区别   
-   
+3. 生物数据爆发式增长的情况下，如何从中挖掘有用信息？如何获得可理解的结构化的知识？        
+4. 信息、模型与算法       
+	6.1 模型是一种数据结构，可视作一种用于表示、存储算法从数据中所学到的知识的结构。        
+	6.2 算法可视作一种过程，是以模型为依托，从输入数据计算得到输出结果的过程。          
+    
     
 ## Learning Plan for the Bioinformatics course:   
 1. 掌握linux基础操作命令。    
@@ -59,5 +58,9 @@ And this is a panda:
 -->
 
 
-### References:
+### References:    
+[Bioinformatics Tutorial](https://book.ncrnalab.org/teaching/)
+[Tsinghua Cloud for Bioinfo](https://cloud.tsinghua.edu.cn/d/dcbb0944631a4291b34c/?p=%2F&mode=list)
 [How to write Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[Markdown Tutorial](https://markdown.com.cn/basic-syntax/)   
+[Syllabus](https://app.yinxiang.com/fx/48420550-8f51-49a6-b404-0cc7e810ab4c)   
