@@ -1,0 +1,21 @@
+1.
+wc -l test_command.gtf     #查看文件行
+wc -c test_command.gtf     #查看文件字数
+
+2.
+grep 'chr_' test_command.gtf | grep 'YDL248W' 
+筛选并输出示例文件中以 chr_ 起始，并且基因id为 YDL248W 的行
+
+3.
+sed 's/chr_/chromosome_/g' test_command.gtf | cut -f '1,3,4,5' 
+将文件中所有的 chr_ 替换为 chromosome_，以制表符作为输入字段的分隔符，取出第 1,3,4,5 列
+
+4.
+互换示例文件的第2列和第3列，并且对输出结果利用 sort 命令依照第4和第5列数字大小排序，将最终结果输出到result.gtf文件中
+awk '{temp = $2; $2 = $3; $3 = temp; print}' test_command.gtf | sort -n -k 4 -k 5 > result.gtf
+
+5.
+更改示例文件的权限，使得文件所有者及所在用户组用户可读、写、执行而其他用户只可读，展示权限修改前后的权限变化
+ls -hl
+chmod 774 test_command.gtf
+ls -hl
