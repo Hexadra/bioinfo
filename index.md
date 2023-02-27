@@ -21,8 +21,8 @@ School of Life Sciences, Tsinghua University<br>
        
 3. 生物数据爆发式增长的情况下，如何从中挖掘有用信息？如何获得可理解的结构化的知识？        
 4. 信息、模型与算法       
-	6.1 模型是一种数据结构，可视作一种用于表示、存储算法从数据中所学到的知识的结构。        
-	6.2 算法可视作一种过程，是以模型为依托，从输入数据计算得到输出结果的过程。          
+	4.1 模型是一种数据结构，可视作一种用于表示、存储算法从数据中所学到的知识的结构。        
+	4.2 算法可视作一种过程，是以模型为依托，从输入数据计算得到输出结果的过程。          
     
     
 ## Learning Plan for the Bioinformatics course:   
@@ -39,28 +39,28 @@ School of Life Sciences, Tsinghua University<br>
 
 
 
-### 23spring Bioinformatics course    
-See my repo for 23spring Bioinformatics course here:
-[bioinfomatics](https://github.com/Hexadra/bioinfo)
+### 23spring Bioinformatics course      
+See my repo for 23spring Bioinformatics course here:    
+[bioinfomatics](https://github.com/Hexadra/bioinfo)     
 
 
-
-## Content   
-1. Homework for 23-spring Bioinfomatics course:    
-	1....<!--[Week1_homework](https://hexadra.github.io/bioinfo/Week1_homework.html)-->   
-	2....  
-2. Notes   
-	1....
-
+ 
+## Content    
+1. Homework for 23-spring Bioinfomatics course:      
+	1....<!--[Week1_homework](https://hexadra.github.io/bioinfo/Week1_homework.html)-->     
+	2....     
+2. Notes    
+	1....    
+  
 <!--
 And this is a panda:  
 ![pandas](htps://wallpapertag.com/wallpaper/full/c/e/5/230888-cute-tumblr-wallpapers-2560x1600-for-android-tablet.jpg "panda")
 -->
-
-
-### References:    
-[Bioinformatics Tutorial](https://book.ncrnalab.org/teaching/)
-[Tsinghua Cloud for Bioinfo](https://cloud.tsinghua.edu.cn/d/dcbb0944631a4291b34c/?p=%2F&mode=list)
-[How to write Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-[Markdown Tutorial](https://markdown.com.cn/basic-syntax/)   
-[Syllabus](https://app.yinxiang.com/fx/48420550-8f51-49a6-b404-0cc7e810ab4c)   
+    
+    
+### References:       
+[Bioinformatics Tutorial](https://book.ncrnalab.org/teaching/)      
+[Tsinghua Cloud for Bioinfo](https://cloud.tsinghua.edu.cn/d/dcbb0944631a4291b34c/?p=%2F&mode=list)      
+[How to write Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)     
+[Markdown Tutorial](https://markdown.com.cn/basic-syntax/)      
+[Syllabus](https://app.yinxiang.com/fx/48420550-8f51-49a6-b404-0cc7e810ab4c)      
