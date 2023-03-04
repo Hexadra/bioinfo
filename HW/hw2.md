@@ -19,7 +19,7 @@ grep -v '^#' 1.gtf |awk '$1 == "XV" && $3 =="gene" {name=$10;gsub("\"", "", name
 **5. 统计1.gtf列数**                  
 
 awk -F '\t' 'BEGIN {to=0}NF>to{to=NF}END{print NF}' 1.gtf   
-
-
-
-2023.3.4
+  
+  
+  
+2023.3.4  
