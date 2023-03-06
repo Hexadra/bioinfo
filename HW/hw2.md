@@ -7,7 +7,7 @@ grep -v '^#' 1.gtf | awk '$1 == "XI" && $3 =="CDS" {name=$10;gsub("\"", "", name
 ```   
 **2. 统计 IV 号染色体上各类 feature （1.gtf文件的第3列，有些注释文件中还应同时考虑第2列） 的数目，并按升序排列。**         
 ```
-grep -v '^#' 1.gtf | awk '$1 == "IV"{print $3}'| sort | uniq -c | sort -nk 1  ``   
+grep -v '^#' 1.gtf | awk '$1 == "IV"{print $3}'| sort -n | uniq -c | sort -nk 1     
 ```
 **3. 寻找不在 IV 号染色体上的所有负链上的基因中最长的2条 CDS 序列，输出他们的长度。**             
 ```
@@ -21,7 +21,7 @@ grep -v '^#' 1.gtf | awk '$1 == "XV" && $3 =="gene" {name=$10;gsub("\"", "", nam
 **5. 统计1.gtf列数**                  
 规定分隔符为tab   
 ```
-awk -F '\t' 'BEGIN {to=0}NF>to{to=NF}END{print NF}' 1.gtf  ``    
+awk -F '\t' 'BEGIN {to=0}NF>to{to=NF}END{print NF}' 1.gtf      
 ```
   
 
