@@ -1,0 +1,640 @@
+BLASTP 2.6.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: User specified sequence set (Input: hw4_2_seq.fa).
+           10 sequences; 700 total letters
+
+
+
+Query= shuffled1
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled1                                                           123     2e-43
+  shuffled9                                                           13.5    2.5  
+  shuffled2                                                           12.3    7.2  
+
+
+> shuffled1
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   VRPRRTGAGRVTYVGTLYSSSSSGASRSTSRAFSSRLVLSRSSSAMSGYTYASGTSPRST  60
+           VRPRRTGAGRVTYVGTLYSSSSSGASRSTSRAFSSRLVLSRSSSAMSGYTYASGTSPRST
+Sbjct  1   VRPRRTGAGRVTYVGTLYSSSSSGASRSTSRAFSSRLVLSRSSSAMSGYTYASGTSPRST  60
+
+Query  61  MSLYPSSRTP  70
+           MSLYPSSRTP
+Sbjct  61  MSLYPSSRTP  70
+
+
+> shuffled9
+Length=70
+
+ Score = 13.5 bits (23),  Expect = 2.5, Method: Compositional matrix adjust.
+ Identities = 8/21 (38%), Positives = 14/21 (67%), Gaps = 0/21 (0%)
+
+Query  34  SSRLVLSRSSSAMSGYTYASG  54
+           S+R ++  S+S  + Y Y+SG
+Sbjct  48  STRSLVRGSASGTTVYAYSSG  68
+
+
+> shuffled2
+Length=70
+
+ Score = 12.3 bits (20),  Expect = 7.2, Method: Compositional matrix adjust.
+ Identities = 7/16 (44%), Positives = 10/16 (63%), Gaps = 0/16 (0%)
+
+Query  38  VLSRSSSAMSGYTYAS  53
+           V SRSS+  +  +Y S
+Sbjct  51  VTSRSSATTASVSYGS  66
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled2
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled2                                                           123     2e-43
+
+
+> shuffled2
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   RPLSMRTGVSPFSYGTRSATRSSSYSGRPRMRALLSTTSSGSSPRYYASSVTSRSSATTA  60
+           RPLSMRTGVSPFSYGTRSATRSSSYSGRPRMRALLSTTSSGSSPRYYASSVTSRSSATTA
+Sbjct  1   RPLSMRTGVSPFSYGTRSATRSSSYSGRPRMRALLSTTSSGSSPRYYASSVTSRSSATTA  60
+
+Query  61  SVSYGSLVGR  70
+           SVSYGSLVGR
+Sbjct  61  SVSYGSLVGR  70
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled3
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled3                                                           123     2e-43
+  shuffled9                                                           16.5    0.19 
+  shuffled2                                                           15.4    0.47 
+  shuffled6                                                           14.2    1.3  
+
+
+> shuffled3
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   RVSLLAGGAGASSYSPVTLTSSRSSSYSSSSSSYPVYSPTTSRGRTSGLATGMTSRSRTF  60
+           RVSLLAGGAGASSYSPVTLTSSRSSSYSSSSSSYPVYSPTTSRGRTSGLATGMTSRSRTF
+Sbjct  1   RVSLLAGGAGASSYSPVTLTSSRSSSYSSSSSSYPVYSPTTSRGRTSGLATGMTSRSRTF  60
+
+Query  61  SYMPRRAVRR  70
+           SYMPRRAVRR
+Sbjct  61  SYMPRRAVRR  70
+
+
+> shuffled9
+Length=70
+
+ Score = 16.5 bits (31),  Expect = 0.19, Method: Compositional matrix adjust.
+ Identities = 16/37 (43%), Positives = 23/37 (62%), Gaps = 1/37 (3%)
+
+Query  18  TLTSSRSSSYSSSSSSYPVYSPTTSRGRTSGLATGMT  54
+           TL SSRSS+Y   + + P+ S T++R    G A+G T
+Sbjct  26  TLRSSRSSAYRMPTRT-PLRSSTSTRSLVRGSASGTT  61
+
+
+> shuffled2
+Length=70
+
+ Score = 15.4 bits (28),  Expect = 0.47, Method: Compositional matrix adjust.
+ Identities = 10/19 (53%), Positives = 14/19 (74%), Gaps = 0/19 (0%)
+
+Query  10  GASSYSPVTLTSSRSSSYS  28
+           G S +S  T +++RSSSYS
+Sbjct  8   GVSPFSYGTRSATRSSSYS  26
+
+
+> shuffled6
+Length=70
+
+ Score = 14.2 bits (25),  Expect = 1.3, Method: Compositional matrix adjust.
+ Identities = 9/22 (41%), Positives = 12/22 (55%), Gaps = 0/22 (0%)
+
+Query  45  RTSGLATGMTSRSRTFSYMPRR  66
+           R SG+      R+RT S + RR
+Sbjct  18  RASGVPAYTLYRARTVSSLRRR  39
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled4
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled4                                                           123     2e-43
+  shuffled7                                                           14.2    1.5  
+  shuffled9                                                           13.9    1.8  
+
+
+> shuffled4
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   YRTRPLAAYGRTSTVSSVRSSSRRPSSSRSTLARMGTSFRSSGSGSRSLSGSTPAVPMSV  60
+           YRTRPLAAYGRTSTVSSVRSSSRRPSSSRSTLARMGTSFRSSGSGSRSLSGSTPAVPMSV
+Sbjct  1   YRTRPLAAYGRTSTVSSVRSSSRRPSSSRSTLARMGTSFRSSGSGSRSLSGSTPAVPMSV  60
+
+Query  61  TATYGSLYYS  70
+           TATYGSLYYS
+Sbjct  61  TATYGSLYYS  70
+
+
+> shuffled7
+Length=70
+
+ Score = 14.2 bits (25),  Expect = 1.5, Method: Compositional matrix adjust.
+ Identities = 7/14 (50%), Positives = 8/14 (57%), Gaps = 0/14 (0%)
+
+Query  43  GSGSRSLSGSTPAV  56
+           GSG R    +TP V
+Sbjct  28  GSGPRRSRAATPRV  41
+
+
+> shuffled9
+Length=70
+
+ Score = 13.9 bits (24),  Expect = 1.8, Method: Compositional matrix adjust.
+ Identities = 11/20 (55%), Positives = 13/20 (65%), Gaps = 0/20 (0%)
+
+Query  18  VRSSSRRPSSSRSTLARMGT  37
+           VRS+S    SSRS+  RM T
+Sbjct  20  VRSTSGTLRSSRSSAYRMPT  39
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled5
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled5                                                           123     2e-43
+  shuffled7                                                           13.5    3.2  
+  shuffled8                                                           12.7    6.3  
+
+
+> shuffled5
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   TSLMTSTSRLSFARYRTPSTGSRMRSPAYATLPGSRLAVRSSSSVSGRGTVTRRSPGYSS  60
+           TSLMTSTSRLSFARYRTPSTGSRMRSPAYATLPGSRLAVRSSSSVSGRGTVTRRSPGYSS
+Sbjct  1   TSLMTSTSRLSFARYRTPSTGSRMRSPAYATLPGSRLAVRSSSSVSGRGTVTRRSPGYSS  60
+
+Query  61  YSSSAGSVYS  70
+           YSSSAGSVYS
+Sbjct  61  YSSSAGSVYS  70
+
+
+> shuffled7
+Length=70
+
+ Score = 13.5 bits (23),  Expect = 3.2, Method: Compositional matrix adjust.
+ Identities = 5/16 (31%), Positives = 13/16 (81%), Gaps = 0/16 (0%)
+
+Query  55  SPGYSSYSSSAGSVYS  70
+           +P  S++SS++ ++Y+
+Sbjct  38  TPRVSTFSSASSTMYT  53
+
+
+> shuffled8
+Length=70
+
+ Score = 12.7 bits (21),  Expect = 6.3, Method: Compositional matrix adjust.
+ Identities = 6/12 (50%), Positives = 8/12 (67%), Gaps = 0/12 (0%)
+
+Query  33  PGSRLAVRSSSS  44
+           P + L VRS+ S
+Sbjct  40  PSTGLMVRSAFS  51
+
+
+ Score = 12.3 bits (20),  Expect = 8.4, Method: Compositional matrix adjust.
+ Identities = 4/5 (80%), Positives = 4/5 (80%), Gaps = 0/5 (0%)
+
+Query  29  YATLP  33
+           Y TLP
+Sbjct  9   YRTLP  13
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled6
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled6                                                           123     2e-43
+  shuffled3                                                           13.9    2.3  
+  shuffled10                                                          13.1    3.4  
+
+
+> shuffled6
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   RMSFMSTSAGGTSSYVLRASGVPAYTLYRARTVSSLRRRYPSSASSTSPRVTPSGTYTRS  60
+           RMSFMSTSAGGTSSYVLRASGVPAYTLYRARTVSSLRRRYPSSASSTSPRVTPSGTYTRS
+Sbjct  1   RMSFMSTSAGGTSSYVLRASGVPAYTLYRARTVSSLRRRYPSSASSTSPRVTPSGTYTRS  60
+
+Query  61  SLSSSGGSRS  70
+           SLSSSGGSRS
+Sbjct  61  SLSSSGGSRS  70
+
+
+> shuffled3
+Length=70
+
+ Score = 13.9 bits (24),  Expect = 2.3, Method: Compositional matrix adjust.
+ Identities = 9/22 (41%), Positives = 12/22 (55%), Gaps = 0/22 (0%)
+
+Query  18  RASGVPAYTLYRARTVSSLRRR  39
+           R SG+      R+RT S + RR
+Sbjct  45  RTSGLATGMTSRSRTFSYMPRR  66
+
+
+> shuffled10
+Length=70
+
+ Score = 13.1 bits (22),  Expect = 3.4, Method: Compositional matrix adjust.
+ Identities = 6/10 (60%), Positives = 7/10 (70%), Gaps = 0/10 (0%)
+
+Query  4   FMSTSAGGTS  13
+           F+STSA   S
+Sbjct  53  FVSTSAYAVS  62
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled7
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled7                                                           123     2e-43
+  shuffled8                                                           13.5    2.8  
+  shuffled9                                                           12.3    6.4  
+
+
+> shuffled7
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   STRRYAMRSPSGLSRRLTLSVRLVSTYGSGPRRSRAATPRVSTFSSASSTMYTSYSYSVS  60
+           STRRYAMRSPSGLSRRLTLSVRLVSTYGSGPRRSRAATPRVSTFSSASSTMYTSYSYSVS
+Sbjct  1   STRRYAMRSPSGLSRRLTLSVRLVSTYGSGPRRSRAATPRVSTFSSASSTMYTSYSYSVS  60
+
+Query  61  PGGSASGSST  70
+           PGGSASGSST
+Sbjct  61  PGGSASGSST  70
+
+
+> shuffled8
+Length=70
+
+ Score = 13.5 bits (23),  Expect = 2.8, Method: Compositional matrix adjust.
+ Identities = 5/6 (83%), Positives = 6/6 (100%), Gaps = 0/6 (0%)
+
+Query  9   SPSGLS  14
+           +PSGLS
+Sbjct  32  TPSGLS  37
+
+
+> shuffled9
+Length=70
+
+ Score = 12.3 bits (20),  Expect = 6.4, Method: Compositional matrix adjust.
+ Identities = 5/7 (71%), Positives = 7/7 (100%), Gaps = 0/7 (0%)
+
+Query  63  GSASGSS  69
+           GSASG++
+Sbjct  55  GSASGTT  61
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled8
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled8                                                           123     2e-43
+  shuffled9                                                           14.6    1.1  
+  shuffled5                                                           14.6    1.1  
+  shuffled7                                                           13.9    2.1  
+  shuffled10                                                          12.3    7.5  
+
+
+> shuffled8
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   YRLGGSSYYRTLPSSRRSRGSSSRAAATRVYTPSGLSGSPSTGLMVRSAFSRVPSRTVTY  60
+           YRLGGSSYYRTLPSSRRSRGSSSRAAATRVYTPSGLSGSPSTGLMVRSAFSRVPSRTVTY
+Sbjct  1   YRLGGSSYYRTLPSSRRSRGSSSRAAATRVYTPSGLSGSPSTGLMVRSAFSRVPSRTVTY  60
+
+Query  61  TSSSSSTMAS  70
+           TSSSSSTMAS
+Sbjct  61  TSSSSSTMAS  70
+
+
+> shuffled9
+Length=70
+
+ Score = 14.6 bits (26),  Expect = 1.1, Method: Compositional matrix adjust.
+ Identities = 12/26 (46%), Positives = 17/26 (65%), Gaps = 0/26 (0%)
+
+Query  22  SSRAAATRVYTPSGLSGSPSTGLMVR  47
+           SSR++A R+ T + L  S ST  +VR
+Sbjct  29  SSRSSAYRMPTRTPLRSSTSTRSLVR  54
+
+
+ Score = 14.2 bits (25),  Expect = 1.6, Method: Compositional matrix adjust.
+ Identities = 6/11 (55%), Positives = 9/11 (82%), Gaps = 0/11 (0%)
+
+Query  47  RSAFSRVPSRT  57
+           RS+  R+P+RT
+Sbjct  31  RSSAYRMPTRT  41
+
+
+> shuffled5
+Length=70
+
+ Score = 14.6 bits (26),  Expect = 1.1, Method: Compositional matrix adjust.
+ Identities = 6/8 (75%), Positives = 6/8 (75%), Gaps = 0/8 (0%)
+
+Query  9   YRTLPSSR  16
+           Y TLP SR
+Sbjct  29  YATLPGSR  36
+
+
+> shuffled7
+Length=70
+
+ Score = 13.9 bits (24),  Expect = 2.1, Method: Compositional matrix adjust.
+ Identities = 5/5 (100%), Positives = 5/5 (100%), Gaps = 0/5 (0%)
+
+Query  33  PSGLS  37
+           PSGLS
+Sbjct  10  PSGLS  14
+
+
+> shuffled10
+Length=70
+
+ Score = 12.3 bits (20),  Expect = 7.5, Method: Compositional matrix adjust.
+ Identities = 5/9 (56%), Positives = 6/9 (67%), Gaps = 0/9 (0%)
+
+Query  29  RVYTPSGLS  37
+           R Y+  GLS
+Sbjct  14  RTYSAPGLS  22
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled9
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled9                                                           123     2e-43
+  shuffled1                                                           12.7    6.2  
+
+
+> shuffled9
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   FGARPASYLRSSSSPYSMVVRSTSGTLRSSRSSAYRMPTRTPLRSSTSTRSLVRGSASGT  60
+           FGARPASYLRSSSSPYSMVVRSTSGTLRSSRSSAYRMPTRTPLRSSTSTRSLVRGSASGT
+Sbjct  1   FGARPASYLRSSSSPYSMVVRSTSGTLRSSRSSAYRMPTRTPLRSSTSTRSLVRGSASGT  60
+
+Query  61  TVYAYSSGGS  70
+           TVYAYSSGGS
+Sbjct  61  TVYAYSSGGS  70
+
+
+> shuffled1
+Length=70
+
+ Score = 12.7 bits (21),  Expect = 6.2, Method: Compositional matrix adjust.
+ Identities = 5/8 (63%), Positives = 6/8 (75%), Gaps = 0/8 (0%)
+
+Query  63  YAYSSGGS  70
+           Y Y+SG S
+Sbjct  49  YTYASGTS  56
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+Query= shuffled10
+
+Length=70
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  shuffled10                                                          123     2e-43
+  shuffled6                                                           13.1    4.2  
+  shuffled8                                                           12.7    5.7  
+
+
+> shuffled10
+Length=70
+
+ Score = 123 bits (308),  Expect = 2e-43, Method: Compositional matrix adjust.
+ Identities = 70/70 (100%), Positives = 70/70 (100%), Gaps = 0/70 (0%)
+
+Query  1   MGSTVTYPSLPSARTYSAPGLSRMRYYSGGSRTSSSSRSRRTSGSSRGSSSRFVSTSAYA  60
+           MGSTVTYPSLPSARTYSAPGLSRMRYYSGGSRTSSSSRSRRTSGSSRGSSSRFVSTSAYA
+Sbjct  1   MGSTVTYPSLPSARTYSAPGLSRMRYYSGGSRTSSSSRSRRTSGSSRGSSSRFVSTSAYA  60
+
+Query  61  VSPLTRVLTA  70
+           VSPLTRVLTA
+Sbjct  61  VSPLTRVLTA  70
+
+
+> shuffled6
+Length=70
+
+ Score = 13.1 bits (22),  Expect = 4.2, Method: Compositional matrix adjust.
+ Identities = 5/6 (83%), Positives = 6/6 (100%), Gaps = 0/6 (0%)
+
+Query  53  FVSTSA  58
+           F+STSA
+Sbjct  4   FMSTSA  9
+
+
+> shuffled8
+Length=70
+
+ Score = 12.7 bits (21),  Expect = 5.7, Method: Compositional matrix adjust.
+ Identities = 5/9 (56%), Positives = 6/9 (67%), Gaps = 0/9 (0%)
+
+Query  14  RTYSAPGLS  22
+           R Y+  GLS
+Sbjct  29  RVYTPSGLS  37
+
+
+
+Lambda      K        H        a         alpha
+   0.307    0.116    0.309    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 26010
+
+
+  Database: User specified sequence set (Input: hw4_2_seq.fa).
+    Posted date:  Unknown
+  Number of letters in database: 700
+  Number of sequences in database:  10
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
