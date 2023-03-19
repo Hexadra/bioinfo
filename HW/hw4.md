@@ -66,11 +66,10 @@ Sbjct  38  TPRVSTFSSASSTMYT  53
 这样做的好处在于计算并存储了短片段的hash值，这样比较短片段是否相同的过程就被简化为了比较哈希值的过程，减少了很多计算量。   
 
 ### 4. 我们常见的PAM250有如下图所示的两种（一种对称、一种不对称），请阅读一下 "Symmetry of the PAM matrices"，再利用Google/wikipedia等工具查阅更多资料，然后总结和解释一下这两种（对称和不对称）PAM250不一样的原因及其在应用上的不同。    
-不对称的矩阵是mutation probability matrix M，
-
-对称的PAM矩阵
-
-
+不对称的矩阵是mutation probability matrix M，其元素M(i,j)的计算方法是M(i,j)=l\*A(i,j)/(N\*f(j)),其中f(j)是氨基酸j出现的频率、N是氨基酸总数、l是一个比例常数、A(i,j)是实际记录的突变的氨基酸的数量。所以矩阵M是不对称的。   
+对称的PAM矩阵则是由矩阵M自乘一定次数后再作归一化得到的，所以PAM(i,j)和PAM(j,i)相等。    
+mutation probability matrix通常用于生成不同的PAM矩阵，以更好适应不同进化距离的序列的比对。   
+而PAM系列矩阵通常用作打分矩阵，用于衡量序列进化上的相似程度。    
 
 
 参考：   
