@@ -1,20 +1,17 @@
 ## Homework 4    
-
+    
 ### 1. 请阐述bowtie中利用了 BWT 的什么性质提高了运算速度？并通过哪些策略优化了对内存的需求？  
-利用BWT变换后的保序性    
-通过间隔记录索引的方式减小了存储索引占用空间。   
-
+利用BWT变换后的保序性，在查找到匹配片段后可以快速找到前文，从而快速找到片段在整个参考序列中的位置，提高了查找时的速度。      
+通过间隔记录而非记录全部索引的方式，减小了存储索引占用的空间，优化了内存需求。    
+    
 ### 2. 用bowtie将 THA2.fa mapping 到 BowtieIndex/YeastGenome 上，得到 THA2.sam，统计mapping到不同染色体上的reads数量(即统计每条染色体都map上了多少条reads)。
 
 ```  
-# 将fasta文件中THA1.fa的reads mapping到酵母基因组上  
+# 将THA1.fa的reads mapping到酵母基因组上  
 bowtie -v 2 -m 10 --best --strata BowtieIndex/YeastGenome -f THA1.fa -S THA1.sam
-# -v 2: 最多容许2个mismatch
-# -m 10: 只输出可以map到不超过10个位置的reads mapping的结果
-# --best --strata: 只汇报最好的一个hit,两个参数需要同时指定
-# BowtieIndex/YeastGenome: 酵母的bowtie index,可以从https://bowtie-bio.sourceforge.net/manual.shtml下载，也可以用bowtie-build从基因组文件自己建立
-# -f THA1.fa: 输入为fasta文件，路径为THA1.fa
-# -S THA1.sam: 输出文件名为THA1.sam，格式为sam文件
+# 输出统计过的reads数量
+cat THA2.sam | grep -v '^@' | awk '{print $3}' | sort | uniq -c
+
 ```  
 
 
