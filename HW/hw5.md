@@ -33,9 +33,19 @@ wget -O- http://sourceforge.net/projects/bio-bwa/files/bwakit/bwakit-0.7.12_x64-
 # Generate the GRCh38+ALT+decoy+HLA and create the BWA index
 bwa.kit/run-gen-ref hs38DH   # download GRCh38 and write hs38DH.fa
 bwa.kit/bwa index hs38DH.fa  # create BWA index
-# mapping
-bwa.kit/run-bwamem -o out -H hs38DH.fa read1.fq read2.fq | sh
+# mapping # skip "|sh" to show command lines
+bwa.kit/run-bwamem -o out -H hs38DH.fa read1.fq read2.fq | sh    
 ```
+```
+wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
+tar jxf bwa-0.7.17.tar.bz2
+cd bwa-0.7.17
+make
+echo 'PATH=$PATH:/path/bwa--*' >> ~/.bashrc
+source ~/.bashrc
+./bwa
+```
+
 ### 5. 利用Genome Browser浏览 1.Mapping的 Homework 得到的sam/bam文件，并仿照上文中的 examples截图展示一个 gene的区域。   
 
 
