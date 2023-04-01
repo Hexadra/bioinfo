@@ -5,16 +5,15 @@
 通过间隔记录而非记录全部索引的方式，减小了存储索引占用的空间，优化了内存需求。    
     
 ### 2. 用bowtie将 THA2.fa mapping 到 BowtieIndex/YeastGenome 上，得到 THA2.sam，统计mapping到不同染色体上的reads数量(即统计每条染色体都map上了多少条reads)。
-
 ```  
 # 将THA1.fa的reads mapping到酵母基因组上  
 bowtie -v 2 -m 10 --best --strata BowtieIndex/YeastGenome -f THA1.fa -S THA1.sam
 # 输出统计过的reads数量
-cat THA2.sam | grep -v '^@' | awk '{print $3}' | sort | uniq -c
-
+grep -v '^@' THA2.sam | awk '{print $3}' | sort | uniq -c
 ```  
-
-
+输出：     
+<img src="./bioinfo_hw5.png" width = "420" height = "190" alt="fig1" align=center /> 
+    
 ### 3. 查阅资料，回答以下问题:     
 （3.1）什么是sam/bam文件中的"CIGAR string"? 它包含了什么信息?    
 CIGAR string 的作用是记录该序列和参考序列相比对时，匹配、插入、删除的数量及位置等情况。    
