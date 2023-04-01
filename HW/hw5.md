@@ -20,7 +20,7 @@ bowtie -v 2 -m 10 --best --strata BowtieIndex/YeastGenome -f THA1.fa -S THA1.sam
 
 ### 3. 查阅资料，回答以下问题:   
 （3.1）什么是sam/bam文件中的"CIGAR string"? 它包含了什么信息?
-
+CIGAR string 的作用是记录该序列和参考序列相比对时，匹配、插入、删除的情况  
 （3.2）"soft clip"的含义是什么，在CIGAR string中如何表示？
 
 （3.3）什么是reads的mapping quality? 它反映了什么样的信息?
