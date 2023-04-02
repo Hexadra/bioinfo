@@ -27,33 +27,59 @@ mapping quality等于-10 * log10{mapping位置出错的概率}，它反映了map
 ### 4. 软件安装和资源文件的下载也是生物信息学实践中的重要步骤。请自行安装教程中未涉及的bwa软件，从UCSC Genome Browser下载Yeast (S. cerevisiae, sacCer3)基因组序列。使用bwa对Yeast基因组sacCer3.fa建立索引，并利用bwa将THA2.fa，mapping到Yeast参考基因组上，并进一步转化输出得到THA2-bwa.sam文件。   
 
 ```
-# Download the bwa-0.7.11 binary package (download link may change)
-wget -O- http://sourceforge.net/projects/bio-bwa/files/bwakit/bwakit-0.7.12_x64-linux.tar.bz2/download \
-  | gzip -dc | tar xf -
-  
-# Generate the GRCh38+ALT+decoy+HLA and create the BWA index
-bwa.kit/run-gen-ref hs38DH   # download GRCh38 and write hs38DH.fa
-bwa.kit/bwa index hs38DH.fa  # create BWA index
-
-# mapping # skip "|sh" to show command lines
-bwa.kit/run-bwamem -o out -H hs38DH.fa read1.fq read2.fq | sh    
-
+# 下载bwa
 wget https://sourceforge.net/projects/bio-bwa/files/bwa-0.7.17.tar.bz2
 tar jxf bwa-0.7.17.tar.bz2
 cd bwa-0.7.17
+# 安装
 make
-echo 'PATH=$PATH:/path/bwa--*' >> ~/.bashrc
+echo 'PATH=$PATH:/home/test/mapping/bwa--*' >> ~/.bashrc
 source ~/.bashrc
 ./bwa
-
 # 下载序列sacCer3.fa.gz（从https://hgdownload.soe.ucsc.edu/goldenPath/sacCer3/bigZips/）
+# 解压序列文件
+gunzip sacCer3.fa.gz
+# 进入目录
+cd /home/test/mapping/bwa-0.7.17
+# 创建索引
+./bwa index /home/test/mapping/sacCer3.fa
+# 生成sam文件
+./bwa aln /home/test/mapping/sacCer3.fa /home/test/mapping/THA2.fa > /home/test/mapping/THA2_bwa_aln.sai
+./bwa samse /home/test/mapping/sacCer3.fa /home/test/mapping/THA2_bwa_aln.sai /home/test/mapping/THA2.fa > /home/test/mapping/THA2_bwa.sam
+# 输出比对结果
+grep -v '^@' /home/test/mapping/THA2_bwa.sam | awk '{print $3}' | sort | uniq -c
+cp /home/test/mapping/THA2_bwa.sam /home/test/share/
 
-移动到
+# 用samtools将sam转换为bam文件供后续操作
+samtools index -@ 8 /home/test/mapping/THA2_bwa.bam
+samtools view -bS /home/test/mapping/THA2_bwa.sam > /home/test/mapping/THA2_bwa.bam 
+cp /home/test/mapping/THA2_bwa.bam /home/test/share/
+```
+比对结果：    
+```
+     24 *
+     17 chrI
+     54 chrII
+     17 chrIII
+    202 chrIV
+     26 chrIX
+     18 chrM
+     38 chrV
+     18 chrVI
+    129 chrVII
+     70 chrVIII
+     77 chrX
+     60 chrXI
+    178 chrXII
+     72 chrXIII
+     59 chrXIV
+    108 chrXV
+     83 chrXVI
 ```
 
-
 ### 5. 利用Genome Browser浏览 1.Mapping的 Homework 得到的sam/bam文件，并仿照上文中的 examples截图展示一个 gene的区域。   
-
+将bam文件导入IGV，图中显示其中一个区域。     
+<img src="./info_hw5.png" width = "420" height = "190" alt="fig1" align=center /> 
 
 
 
