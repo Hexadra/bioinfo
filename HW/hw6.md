@@ -1,0 +1,21 @@
+## Homework 6    
+
+### 请大家查阅网络资源（如NCBI和ENSEMBL）以及文献等资料回答以下问题:      
+#### 1）人类基因组的大小是多少?基本组成是怎样的？    
+
+#### 2）人类基因组中有多大的比例可以被转录成非编码RNA？请列举出主要非编码RNA的类型，并用1-2句话对它们的功能进行解释。 注：请说明数字的来源
+
+### Bedtools and Samtools
+#### 1）我们提供的bam文件COAD.ACTB.bam是单端测序分析的结果还是双端测序分析的结果？为什么？(提示：可以使用samtools flagstat）      
+
+#### 2）查阅资料回答什么叫做"secondary alignment"？并统计提供的bam文件中，有多少条记录属于"secondary alignment?" （提示：可以使用samtools view -f 获得对应secondary alignment的records进行统计）     
+
+#### 3）请根据hg38.ACTB.gff计算出在ACTB基因的每一条转录本中都被注释成intron的区域，以bed格式输出。并提取COAD.ACTB.bam中比对到ACTB基因intron区域的bam信息，后将bam转换为fastq文件。      
+>提示：
+写脚本把ACTB在gff中第三列为"gene"的interval放在一个bed文件中，第三列为"exon"的intervals放在另外一个bed文件中，再使用bedtools subtract。
+请注意bed文件使用的是0-based coordinate，gff文件使用的是1-based coordinate。
+鼓励其他实现方法，描述清楚过程即可
+
+
+#### 4) 利用COAD.ACTB.bam计算出reads在ACTB基因对应的genomic interval上的coverage，以bedgraph格式输出。 （提示：对于真核生物转录组测序向基因组mapping得到的bam文件，bedtools genomecov有必要加-split参数。）       
+
