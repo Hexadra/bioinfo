@@ -41,8 +41,10 @@ lncRNA: 参与多种生物学过程，包括DNA甲基化、组蛋白修饰、RNA
 
 #### 2）查阅资料回答什么叫做"secondary alignment"？并统计提供的bam文件中，有多少条记录属于"secondary alignment?" （提示：可以使用samtools view -f 获得对应secondary alignment的records进行统计）     
 当一条read可被map到多个位置时，其中一个会被标记为primary，而选择哪个是primary的依据可能是随机的，也可能依赖某个指标。其它的alignment都会被标记为secondary。    
->来源: [Linear, Chimeric, Supplementary, Primary and Secondary Alignments](https://yulijia.net/en/bioinformatics/2015/12/21/Linear-Chimeric-Supplementary-Primary-and-Secondary-Alignments.html#:~:text=Supplementary%20Alignment%3A%20A%20chimeric%20reads%20but%20not%20a,other%20alignments%20have%20the%20secondary%20alignment%20flag.%205.)    
-     
+>来源: [Linear, Chimeric, Supplementary, Primary and Secondary Alignments](https://yulijia.net/en/bioinformatics/2015/12/21/Linear-Chimeric-Supplementary-Primary-and-Secondary-Alignments.html#:~:text=Supplementary%20Alignment%3A%20A%20chimeric%20reads%20but%20not%20a,other%20alignments%20have%20the%20secondary%20alignment%20flag.%205.)       
+secondary alignment对应的FLAG为256，故使用：`samtools view -f 256 COAD.ACTB.bam | wc -l`   
+输出`4923`     
+
 #### 3）请根据hg38.ACTB.gff计算出在ACTB基因的每一条转录本中都被注释成intron的区域，以bed格式输出。并提取COAD.ACTB.bam中比对到ACTB基因intron区域的bam信息，后将bam转换为fastq文件。      
 >提示：   
 写脚本把ACTB在gff中第三列为"gene"的interval放在一个bed文件中，第三列为"exon"的intervals放在另外一个bed文件中，再使用bedtools subtract。   
