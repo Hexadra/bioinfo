@@ -52,5 +52,10 @@ secondary alignment对应的FLAG为256，故使用：`samtools view -f 256 COAD.
 鼓励其他实现方法，描述清楚过程即可    
 
 
-#### 4) 利用COAD.ACTB.bam计算出reads在ACTB基因对应的genomic interval上的coverage，以bedgraph格式输出。 （提示：对于真核生物转录组测序向基因组mapping得到的bam文件，bedtools genomecov有必要加-split参数。）       
+#### 4) 利用COAD.ACTB.bam计算出reads在ACTB基因对应的genomic interval上的coverage，以bedgraph格式输出。 （提示：对于真核生物转录组测序向基因组mapping得到的bam文件，bedtools genomecov有必要加-split参数。）        
+
+`bedtools genomecov -ibam COAD.ACTB.bam -split -bg >  COAD.coverage.bedgraph`
+
+
+
 
