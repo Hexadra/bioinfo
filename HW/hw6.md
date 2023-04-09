@@ -37,7 +37,7 @@ lncRNA: 参与多种生物学过程，包括DNA甲基化、组蛋白修饰、RNA
 0 + 0 with mate mapped to a different chr
 0 + 0 with mate mapped to a different chr (mapQ>=5)
 ```
-
+该bam文件是单端测序的结果，因为paired in sequencing为0+0，显示reads没有配对。    
 
 #### 2）查阅资料回答什么叫做"secondary alignment"？并统计提供的bam文件中，有多少条记录属于"secondary alignment?" （提示：可以使用samtools view -f 获得对应secondary alignment的records进行统计）     
 
