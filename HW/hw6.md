@@ -20,6 +20,24 @@ lncRNA: 参与多种生物学过程，包括DNA甲基化、组蛋白修饰、RNA
 
 ### Bedtools and Samtools
 #### 1）我们提供的bam文件COAD.ACTB.bam是单端测序分析的结果还是双端测序分析的结果？为什么？(提示：可以使用samtools flagstat）      
+命令： `samtools flagstat COAD.ACTB.bam`  
+输出结果：    
+```
+185650 + 0 in total (QC-passed reads + QC-failed reads)
+4923 + 0 secondary
+0 + 0 supplementary
+0 + 0 duplicates
+185650 + 0 mapped (100.00% : N/A)
+0 + 0 paired in sequencing
+0 + 0 read1
+0 + 0 read2
+0 + 0 properly paired (N/A : N/A)
+0 + 0 with itself and mate mapped
+0 + 0 singletons (N/A : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+```
+
 
 #### 2）查阅资料回答什么叫做"secondary alignment"？并统计提供的bam文件中，有多少条记录属于"secondary alignment?" （提示：可以使用samtools view -f 获得对应secondary alignment的records进行统计）     
 
