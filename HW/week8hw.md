@@ -33,15 +33,30 @@ Fraction of reads explained by "1+-,1-+,2++,2--": 0.4916
 ```
 由于"1++,1--,2+-,2-+" 和"1+-,1-+,2++,2--" 的数值相差不大且都接近0.5，故认为采用的是Non-Strand-specific的方法。           
         
-计算shape02的read count matrix:     
+计算shape02的read count matrix:        
 ```
-/home/software/subread-2.0.3-source/bin/featureCounts \
-> -s 0 -p -t exon -g gene_id \
-> -a GTF/Arabidopsis_thaliana.TAIR10.34.gtf \
-> -o result/Shape02.featurecounts.exon.txt bam/Shape02.bam
+/home/software/subread-2.0.3-source/bin/featureCounts -s 0 -p -t exon -g gene_id -a GTF/Arabidopsis_thaliana.TAIR10.34.gtf -o result/Shape02.featurecounts.exon.txt bam/Shape02.bam
 ```
-    
-找到AT1G09530基因的raw reads count:        
+输出Shape02.featurecounts.exon.txt和Shape02.featurecounts.exon.txt.summary文件（见作业压缩包）。                   
+```
+Status  bam/Shape02.bam
+Assigned        2559170
+Unassigned_Unmapped     0
+Unassigned_Read_Type    0
+Unassigned_Singleton    0
+Unassigned_MappingQuality       0
+Unassigned_Chimera      0
+Unassigned_FragmentLength       0
+Unassigned_Duplicate    0
+Unassigned_MultiMapping 0
+Unassigned_Secondary    0
+Unassigned_NonSplit     0
+Unassigned_NoFeatures   59487
+Unassigned_Overlapping_Length   0
+Unassigned_Ambiguity    111786
+```
+      
+找到AT1G09530基因的raw reads count:          
 ```
 cat Shape02.featurecounts.exon.txt | grep AT1G09530 | awk '{print $1,$7}'
 ```
