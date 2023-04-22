@@ -1,5 +1,12 @@
 ## Homework 8    
-#### 1) 请阐述 RNA-seq 中归一化基因表达值的几种基本计算方法。    
+#### 1) 请阐述 RNA-seq 中归一化基因表达值的几种基本计算方法。       
+首先设N=map到某基因上的reads数，T=所有reads的总数。则：    
+CPM/RPM:  $\frac{N}{\frac{T}{10^6}}$     
+RPKM: $\frac{N}{\frac{T}{10^6} * gene\quad length\quad in\quad Kbp}$        
+FPKM: RPKM/2    
+TPM: $\frac{RPKM}{\sum (RPKM)} * 10^6$     
+TMM counts:     
+RLE:     
 
 #### 2) 根据下述图片描述，填出对应选项:    
 ![image](https://user-images.githubusercontent.com/126166219/233662385-dd3a3aad-66d3-40e6-b3ce-e5915a0dd62b.png)    
