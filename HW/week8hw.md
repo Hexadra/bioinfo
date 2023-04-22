@@ -15,7 +15,7 @@ RLE: 首先计算基因原始数据的几何均值，再用gene除以几何均�
 **dUTPs Method:** A.4    
     
 #### 3) 通过软件计算，判断给出文件shape02数据是来自哪一种sequencing protocols （strand nonspecific, strand specific - forward, strand specific - reverse)，并选择合适的参数计算shape02的read count matrix，给出AT1G09530基因(PIF3基因)上的counts数目。         
-判断02数据来源:       
+判断shape02数据来源:       
 ```
 cd /home/test
 /usr/local/bin/infer_experiment.py -r GTF/Arabidopsis_thaliana.TAIR10.34.bed -i bam/Shape02.bam
