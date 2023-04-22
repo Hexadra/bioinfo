@@ -20,13 +20,53 @@ RLE: 首先计算基因原始数据的几何均值，再用gene除以几何均�
 
 
 #### 4) tumor-transcriptome-demo.tar.gz提供了结肠癌(COAD)，直肠癌(READ)和食道癌(ESCA)三种癌症各50个样本的bam文件用featureCount计算产生的结果。请大家编写脚本将这些文件中的counts合并到一个矩阵中(行为基因，列为样本), 计算logCPM的Z-score，并用 heatmap 展示，提供代码和heatmap。根据heatmap可视化的结果，你认为这三种癌症中哪两种癌症的转录组是最相似的?        
-脚本文件如下     
+脚本文件如下：     
 ```
+library(pheatmap)
+setwd('C:/Users/Sumts/Desktop/tumor-transcriptome-demo')
 
+gettype=function(s){
+  t=strsplit(s,split='/')[[1]][1]
+  return(t)
+}
+# 只读取第一列和第七列
+classes=c("character",rep("NULL",5),"integer")
+# 批量读取所有文件，并整合到一个数据框rawm中
+path=c("COAD","ESCA","READ")
+samplelist=list.files(path,pattern="*.txt$",full.names=TRUE)
+n=length(samplelist)
+rawm=read.table(samplelist[1],colClasses=classes,skip=2)
+colnames(rawm)=c("GeneId",1)
+for (i in c(2:length(samplelist))){
+  temp=read.table(samplelist[i],colClasses=classes,skip=2)
+  colnames(temp)=c("GeneId",i)
+  rawm=merge(rawm,temp,by="GeneId",suffixes=NULL)
+}
+rownames(rawm)=rawm$GeneId
+rawm$GeneId=NULL
 
+# 计算z score
+log10.CPM.matrix=log10(t(1000000*t(rawm)/colSums(rawm))+1)
+z.scores=(log10.CPM.matrix - rowMeans(log10.CPM.matrix))/apply(log10.CPM.matrix,1,sd)
 
+# 处理数据
+z.scores=z.scores[apply(z.scores, 1, function(y) any(!is.na(y))),]
+z.scores[is.na(z.scores)]=0
+z.scores[z.scores>2]=4
+z.scores[z.scores <= -2] = -4
+# 注释癌症类型
+anno_col = data.frame(TumorType=factor(sapply(samplelist,gettype)))
+rownames(anno_col) = colnames(z.scores)
 
-
-
+# 绘制Heatmap
+pheatmap(z.scores,
+         color = colorRampPalette(c("red", "white", "yellow"))(50),
+         cutree_col = 3,
+         show_colnames=FALSE, cluster_cols=TRUE,
+         annotation_col = anno_col,
+         annotation_colors = list(TumorType = c(COAD = "red", ESCA = "yellow", READ = "blue")))
 
 ```
+作Heatmap如下（部分基因行为NaN，被聚为一类）    
+由图可看出绝大部分COAD和ESCA被分为同一类，即得出结论，结肠癌和直肠癌转录组最接近。     
+![clus](https://user-images.githubusercontent.com/126166219/233792220-1d3a6e59-25cc-4300-832f-3b1f20ab13c8.png)
