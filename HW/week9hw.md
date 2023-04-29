@@ -21,3 +21,7 @@
 
 ### II.3.2 KEGG     
 1. 请用 KEGG enrichment 分析上一章(GO enrichment analysis)中的基因集，比较两章的结果，总结两种方法得到的生物学意义有哪些异同。     
+
+
+
+
