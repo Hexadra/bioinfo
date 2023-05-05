@@ -57,7 +57,7 @@ write.table(diff.table.filtered, file = 'edger.uvr8.light.vs.dark.txt', sep = "\
       
 4. 对于uvr8突变型的差异基因，定义|log2FC|>1，FDR<0.05的基因为差异表达基因。比较两个软件得到的差异基因有多少是重合的，有多少是不同的，用venn图的形式展示     
 结果：      
-![Venn_week9](https://user-images.githubusercontent.com/126166219/236505938-c5ff11a7-9129-4e09-be80-612f63baaaef.jpg)
+<img src="./Venn_week9.png" width = "600" height = "600" alt="图片" align=center />
       
 代码：     
 ```
@@ -76,9 +76,27 @@ venn.plot <- venn.diagram(
 ```
        
 5. 对于edgeR找出的FDR<0.05的基因，选出log2FoldChange最大的10个基因和最小的10个基因，计算表达量log10CPM的Z-score并作热图（heatmap）    
+         
+代码：    
+```
+# 计算z score
+e.table$z.scores=(e.table$logCPM - mean(e.table$logCPM)/sd(e.table$logCPM))
+e.table=e.table[order(e.table$logFC),]
+top=e.table[c(1:10,49:58),]
+z.score=top[c('z.scores')]
 
-    
-    
+library(pheatmap)
+pheatmap(z.score,
+         color = colorRampPalette(c("red", "white", "yellow"))(50),
+         cutree_col = 2,
+         cluster_cols=F,
+         annotation_colors = list(TumorType = c(COAD = "red", ESCA = "yellow", READ = "blue"))
+         )
+```
+热图：       
+<img src="./heatmap_week9.png" width = "664" height = "664" alt="图片" align=center />
+             
+      
 ### II.3.1 GO       
 1. 从wt.light.vs.dark.all.txt(这是我们在差异表达一节获得的野生型的结果)中选取显著上调的(FDR<0.05, logFC>1)的基因进行GO分析。     
 
