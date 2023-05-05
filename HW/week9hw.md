@@ -57,7 +57,8 @@ write.table(diff.table.filtered, file = 'edger.uvr8.light.vs.dark.txt', sep = "\
       
 4. 对于uvr8突变型的差异基因，定义|log2FC|>1，FDR<0.05的基因为差异表达基因。比较两个软件得到的差异基因有多少是重合的，有多少是不同的，用venn图的形式展示     
 结果：      
-![Venn_week9](https://user-images.githubusercontent.com/126166219/236502699-d09c3356-ec14-4a2a-8b2e-21919a2f64dc.jpeg)
+![Venn_week9](https://user-images.githubusercontent.com/126166219/236505938-c5ff11a7-9129-4e09-be80-612f63baaaef.jpg)
+      
 代码：     
 ```
 d.table=read.table("uvr8.light.vs.dark.txt",sep='\t')
