@@ -11,34 +11,35 @@ DESeq2使用RLE
 而edgeR使用TMM counts 
     
 3. 利用我们以上介绍的方法和数据，分别使用DESeq2和edgeR找出uvr8突变型（uvr8）在光照前后的差异基因，保存为文本文件       
+     
 文本文件见：     
 
 脚本代码如下：     
 ```
 raw.counts <- read.table("count_exon.txt", sep='\t', header = T,row.names = 1)     #只使用野生型数据
-wt.raw.counts <- raw.counts[,c("CD1_1", "CD1_2", "CD1_3", "CD0_1", "CD0_2", "CD0_3")]
-wt.filtered.counts <- wt.raw.counts[rowMeans(wt.raw.counts) > 5, ]          #过滤掉表达量过低的基因
+uvr8.raw.counts <- raw.counts[,c("UD1_1", "UD1_2", "UD1_3", "UD0_1", "UD0_2", "UD0_3")]
+uvr8.filtered.counts <- uvr8.raw.counts[rowMeans(uvr8.raw.counts) > 5, ]          #过滤掉表达量过低的基因
 
 conditions <- factor(c(rep("Control", 3), rep("Treatment", 3)),levels = c("Control","Treatment"))
-colData <- data.frame(row.names = colnames(wt.filtered.counts),conditions=conditions)
+colData <- data.frame(row.names = colnames(uvr8.filtered.counts),conditions=conditions)
 
 #DESeq2
 library(DESeq2)
 suppressPackageStartupMessages(library(DESeq2))
 
-dds <- DESeqDataSetFromMatrix(wt.filtered.counts, colData, design = ~conditions)#进行差异分析
+dds <- DESeqDataSetFromMatrix(uvr8.filtered.counts, colData, design = ~conditions)#进行差异分析
 dds <- DESeq(dds)
 res <- results(dds)#获取结果
 
 diff.table <- subset(res, padj < 0.05 & abs(log2FoldChange) > 1)
-write.table(diff.table,"wt.light.vs.dark.txt", sep='\t', row.names = T, quote = F)
+write.table(diff.table,"uvr8.light.vs.dark.txt", sep='\t', row.names = T, quote = F)
 
 
 # edgeR
 conditions <- factor(c(rep("Control", 3), rep("Treatment", 3)),levels = c("Control","Treatment"))
 design <- model.matrix(~conditions)#获取design矩阵
 library(edgeR) 
-y <- DGEList(counts = wt.filtered.counts) # 定义edgeR用于存储基因表达信息的DGEList对象
+y <- DGEList(counts = uvr8.filtered.counts) # 定义edgeR用于存储基因表达信息的DGEList对象
 y <- calcNormFactors(y, method="TMM")# TMM标准化
 
 # 估计dispersion
@@ -51,12 +52,29 @@ lrt <- glmLRT(fit,coef=2)
 
 diff.table <- topTags(lrt, n = nrow(y))$table
 diff.table.filtered <- diff.table[abs(diff.table$logFC) > 1 & diff.table$FDR < 0.05,]
-write.table(diff.table.filtered, file = 'edger.wt.light.vs.dark.txt', sep = "\t", quote = F, row.names = T, col.names = T)
+write.table(diff.table.filtered, file = 'edger.uvr8.light.vs.dark.txt', sep = "\t", quote = F, row.names = T, col.names = T)
 ```
-
+      
 4. 对于uvr8突变型的差异基因，定义|log2FC|>1，FDR<0.05的基因为差异表达基因。比较两个软件得到的差异基因有多少是重合的，有多少是不同的，用venn图的形式展示     
-
-9. 对于edgeR找出的FDR<0.05的基因，选出log2FoldChange最大的10个基因和最小的10个基因，计算表达量log10CPM的Z-score并作热图（heatmap）    
+结果：      
+![Venn_week9](https://user-images.githubusercontent.com/126166219/236502699-d09c3356-ec14-4a2a-8b2e-21919a2f64dc.jpeg)
+代码：     
+```
+d.table=read.table("uvr8.light.vs.dark.txt",sep='\t')
+e.table=read.table("edger.uvr8.light.vs.dark.txt",sep='\t')
+d.table=rownames(d.table)
+e.table=rownames(e.table)
+library(VennDiagram)
+venn.plot <- venn.diagram(
+  x = list(
+    "DESeq2" = d.table,
+    "edgeR" = e.table
+  ),
+  filename = "Venn_week9.jpeg",
+)
+```
+       
+5. 对于edgeR找出的FDR<0.05的基因，选出log2FoldChange最大的10个基因和最小的10个基因，计算表达量log10CPM的Z-score并作热图（heatmap）    
 
     
     
