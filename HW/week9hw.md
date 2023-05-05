@@ -7,8 +7,23 @@ q value(FDR)即false discovery rate，其意义为在假设检验中假阳性占
        
 2. 请结合上课时所讲的知识阐述DESeq2和edgeR中如何对数据进行 normalization，列出并解释具体的公式 。     
      
-DESeq2使用RLE 
-而edgeR使用TMM counts 
+DESeq2使用RLE进行归一化：    
+原始的表达量矩阵每一行代表一个基因，每一列代表一个样本，首先取raw counts的对数值，再计算每个基因的此对数值在所有样本中的均值；将每个基因的表达量减去对应的均值，然后取中位数，该中位数即为size factor。每个样本的raw counts除以该样本的sizefactor，就得到了归一化之后的表达量。      
+$log(size\quad factor)=median(\frac{log(raw \quad counts_i)}{\frac{1}{n}\sum_i log(raw \quad counts_i)})$      
+$normalized \quad expression_i=\frac{raw \quad counts_i}{size \quad factor}$
+        
+而edgeR使用TMM counts       
+首先对每个样本计算CPM并排序后，计算75%分位数的平均值，选择其75%分位数最接近平均值的样本作参考样本。          
+然后计算每个基因在样本和参考样本中的log fold change，并去掉log fold change前30\%和后30\%的基因          
+$log \quad fold \quad change=log_2 \frac{CPM \quad in \quad ref}{CPM \quad in \quad sample}$           
+将每个基因在样本和参考中的表达量取对数后求平均后，去掉平均值前5\%和后5\%的基因                 
+$average \quad level= \frac{log_2 (CPM \quad in \quad ref)+log_2 (CPM \quad in \quad sample)}{2}$       
+将剩下的基因的log fold change按raw counts数加权求平均，再减去自身的均值，即得到每个样本的标准化因子          
+$weighted \quad average= \frac{ \sum read \quad counts \cdot log \quad fold \quad change}{total \quad reads}$        
+$log_2 scaling \quad factor=weighted \quad average- \frac{ \sum weighted \quad average}{n}$     
+      
+最后，将每个raw counts除以该标准化因子即可归一化         
+$normalized \quad expression_i=\frac{raw \quad counts_i}{log_2 scaling \quad factor}$     
     
 3. 利用我们以上介绍的方法和数据，分别使用DESeq2和edgeR找出uvr8突变型（uvr8）在光照前后的差异基因，保存为文本文件       
      
