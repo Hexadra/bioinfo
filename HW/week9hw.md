@@ -12,8 +12,9 @@ DESeq2使用RLE
     
 3. 利用我们以上介绍的方法和数据，分别使用DESeq2和edgeR找出uvr8突变型（uvr8）在光照前后的差异基因，保存为文本文件       
      
-文本文件见：     
-
+文本文件见本md所在目录。          
+[uvr8.light.vs.dark.txt](uvr8.light.vs.dark.txt)     
+[edger.uvr8.light.vs.dark.txt](edger.uvr8.light.vs.dark.txt)      
 脚本代码如下：     
 ```
 raw.counts <- read.table("count_exon.txt", sep='\t', header = T,row.names = 1)     #只使用野生型数据
