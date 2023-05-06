@@ -115,17 +115,38 @@ pheatmap(z.score,
       
 ### II.3.1 GO       
 1. 从wt.light.vs.dark.all.txt(这是我们在差异表达一节获得的野生型的结果)中选取显著上调的(FDR<0.05, logFC>1)的基因进行GO分析。       
-GO分析结果：      
-[analysis_GO_week9.txt](analysis_GO_week9.txt)     
-<img src="./GO_ana.png" width = "671" height = "601" alt="图片" align=center />    
-
-3. 请问上面的例子中， Fold Enrichment和P value是如何计算的? 请写出公式，并解释原理。此外，在定义显著富集的 GO terms 时为什么一般不是参考P value的大小，而是要计算一个 FDR来做为参考？        
-
-
-
+      
+GO分析结果见如下文本文档和图片：       
+[analysis_GO_week9.txt](analysis_GO_week9.txt)      
+<img src="./GO_ana.png" width = "671" height = "601" alt="图片" align=center />     
+        
+3. 请问上面的例子中， Fold Enrichment和P value是如何计算的? 请写出公式，并解释原理。此外，在定义显著富集的 GO terms 时为什么一般不是参考P value的大小，而是要计算一个 FDR来做为参考？               
+       
+Fold Enrichment即计算某GO term在样本中的占比为整个数据库中的多少倍：     
+$Fold \quad Enrichment = \frac{counts \quad in \quad sample}{sample \quad size} \cdot \frac{database \quad size}{counts \quad in \quad database} $
+      
+而p-value的意义即为随机抽取样本时得到当前结果的概率。       
+设数据库中基因总数为N，该GO term下的基因数目为K，样本包含n个基因，其中k个属于该GO term。若完全随机地从数据库中抽取n个基因，其中属于该GO term的基因数X应服从超几何分布H(N,n,K)，即  $P(X=k)= \frac{C_K^k C_{N-K}{n-k}}{C_N^n} $ ，这一概率即为raw p-value。         
+         
+计算FDR是因为在GO analysis中，每一个样本涉及到的GO term都要经过假设检验，判断是否显著，所以需要计算FDR，作多重检验校正，以防止假阳性率过高。
+       
+       
 ### II.3.2 KEGG     
 1. 请用 KEGG enrichment 分析上一章(GO enrichment analysis)中的基因集，比较两章的结果，总结两种方法得到的生物学意义有哪些异同。        
-
+      
+KEGG分析结果见如下文本文档和图片：       
+[analysis_KEGG.txt](analysis_KEGG.txt)      
+<img src="./week9_KEGG.png" width = "611" height = "401" alt="图片" align=center />     
+       
+ GO分析中得到的结果与黄酮醇生物合成调控、对UV-A的响应、花色素苷合成、蓝光响应、质体定位、叶绿体定位、远红光响应等等有关。       
+        
+ 而KEGG分析的结果聚为几类，分别与类黄酮合成调控、氧化还原酶活性、糖苷转移酶、锌指结构域、双氧化酶活性调控、Myb结构域、谷胱甘肽代谢等等过程有关。           
+         
+ 由此我们可以看出GO分析的结果通常更关注较为宏观的生物学过程和现象，而KEGG更关心的是代谢通路、分子结构等更为微观的过程。      
+ 
+ 
+ 
+ 
 
 
 
