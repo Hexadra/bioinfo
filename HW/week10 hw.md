@@ -13,6 +13,7 @@
 
 
 ```
+cd /home/test/chip-seq/homework
 mkdir output
 makeTagDirectory input/ip ip.chrom_part.bam
 makeTagDirectory input/input input.chrom_part.bam
